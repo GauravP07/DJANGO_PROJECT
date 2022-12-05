@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Contact
+{% endblock title %}
+
+{% block body %}
+<div class="container-fluid px-0 mb-3">
+    <img src="https://media.istockphoto.com/id/1302679757/photo/ice-cream-scoops-in-cones-with-copy-space-on-blue.jpg?s=612x612&w=0&k=20&c=IDqF7Jo4yDFBrUszP8onJrJG2VOYg9EfjOF7tjz3yJc=" class="rounded mx-auto d-block mt-3" alt="..."></img>
+    <h2 class="text-center">Contact Us</h2>
+</div>
+<div class="container py-4">
+    <form method="Post" action="/contact">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="name">Name </label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name ="email" placeholder="Enter Your Email">
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone No.</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your contact No.">
+        </div>
+        
+        <div class="form-group">
+          <label for="desc">Tell me what you want to contact me for</label>
+          <textarea class="form-control" id="desc" name ="desc" rows="3"></textarea>
+        </div>
+        <button  class="btn btn-primary" type="submit ">Submit</button
+      </form>
+</div>
+
+{% endblock body %}
